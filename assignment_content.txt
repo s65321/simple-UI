@@ -1,0 +1,30 @@
+MFC控制項UI
+
+[ 項目內容 ]
+1.	UI中要顯示當前時間，並且時間要持續變化
+2.	建立一個List Control內容包含 勾選欄位、人名、年紀
+3.	提供欄位輸入人名、年紀後，點擊按鈕加入List Control中，須注意年紀僅能輸入數字，非數字不能輸入
+4.	提供delete按鈕，從List Control中刪除勾選欄位被勾選的項目
+5.	List Control中的Scrollbar在更新時不能因項目更新而至頂
+
+[ 項目 ]
+檔案讀寫程式設計
+
+[ 項目內容 ]
+1.	呈上題，新增將List Control中的資料輸出至csv檔案中紀錄的功能
+2.	新增程式選擇開啟檔案，並將csv檔案內容依照欄位名稱填入List Control中
+3.	呈上點，csv內容中與List Control重複的內容，不顯示，
+ex. 原本List Control中有資料1、2、3，而csv中有資料2、4、5，則讀csv後的List Control內容會是1、2、3、4、5
+
+MFC Control UI
+
+[Item Content]
+1.	UI should show the current time, and the time shuld keep renewing continuously 
+2.	Build a List Control, including the information about name, age, and check box
+3.	Provide a edited field for entering name and age, and the age field only can type in digital number
+4.	Provide the button of delete. Delete the item which is choosed on check box 
+5.	When update the List Control item, the scroller bar should always show the newest information
+
+1.	Provide a function for exporting the List Control information to csv
+2	Provide a function for importing the csv information to List Control
+3	As mention above, the contents of the csv content duplicated with List Control are not displayed
