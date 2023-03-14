@@ -1,4 +1,5 @@
 "# simple-UI" 
+
 Designed a MFC UI
 **1.	UI should show the current time, and the time shuld keep renewing continuously **
   a. set the Timer, renew the static text per second
