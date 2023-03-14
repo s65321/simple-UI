@@ -358,6 +358,24 @@ void CcancancanDlg::OnLvnItemchangedList2(NMHDR* pNMHDR, LRESULT* pResult)
 
 //name age的比對機制可優化，方便擴充
 //compare buffer可省略，新增出來純粹是縮排版面
+CString selectInputFilePath() {
+	CString strFolderPath;
+	BROWSEINFO bi = { 0 };
+	bi.ulFlags = BIF_NEWDIALOGSTYLE | BIF_EDITBOX | BIF_RETURNONLYFSDIRS;
+	LPITEMIDLIST pidl = SHBrowseForFolder(&bi);
+
+	if (pidl != NULL)
+	{
+		TCHAR path[MAX_PATH];
+		if (SHGetPathFromIDList(pidl, path))
+		{
+			strFolderPath = path;
+		}
+		CoTaskMemFree(pidl);
+	}
+	return strFolderPath;
+}
+
 void CcancancanDlg::OnBnClickedButton1()
 {
 	CString Name = L"Name";
@@ -365,7 +383,7 @@ void CcancancanDlg::OnBnClickedButton1()
 	CString Age = L"Age";
 #if 1
 	CStdioFile m_file;
-	CString filePath = L"C:\\Users\\HNSD\\Desktop\\Can的工作內容\\新人作業\\HW3\\TEST.csv";
+	CString filePath =selectInputFilePath() + L"\\TEST.csv";
 	//創建並寫入標題
 	if (!m_file.Open((LPCTSTR)filePath, CFile::modeCreate | CFile::modeReadWrite | CFile::modeNoTruncate)) {
 		AfxMessageBox(L"文件開啟中，請關閉");
